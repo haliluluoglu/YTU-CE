@@ -16,7 +16,7 @@ int main(){
 		}
 		i++;
  	}
-	for(i=1; i<25	; i++)
+	for(i=0; i<25	; i++)
 	{
 		if(frequency[i]!=0)
 		{
