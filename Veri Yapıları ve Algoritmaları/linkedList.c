@@ -35,8 +35,7 @@ int main()
 	printList(root);
 	//Reversing the linked lis
 	reverseList(root);
-	printList(root);
-
+	
 	return 0;
 }
 //Printing the linked list.
@@ -62,6 +61,8 @@ void reverseList(Node *head)
 		prevNode=currentNode;
 		currentNode=temp;
 	}
+	head=prevNode;
+	printList(head);
 }
 //Inserting element at the top of linked list..
 Node *insertTop(int num, Node *head)
