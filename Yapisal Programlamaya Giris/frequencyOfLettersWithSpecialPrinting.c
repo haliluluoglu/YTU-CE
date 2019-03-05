@@ -6,6 +6,7 @@ int main(){
 	char **printMatrix;
 	int i=0,index,counter=0,j,tempCount,k;
 	char string[100];
+	char tempChar;
 
 	printf("Enter a word, please: ");
 	gets(string);
@@ -25,19 +26,28 @@ int main(){
 			counter++;
 		}
 	}
-	printMatrix=(char **)malloc(sizeof(char *)*(counter+1));
-	for(i=0; i<=counter; i++)
+	printMatrix=(char **)malloc(sizeof(char *)*(counter+2));
+	for(i=0; i<=(counter+2); i++)
 	{
-		printMatrix[i]=(char *)malloc(sizeof(char)*(counter+1));
+		printMatrix[i]=(char *)malloc(sizeof(char)*(counter+2));
+	}
+	for(i=0; i<(counter+2); i++)
+	{
+		for(j=0; j<(counter+2); j++)
+		{
+			printMatrix[i][j]=0;
+		}
+		printf("\n");
 	}
 	j=1;
 	for(i=0; i<25; i++)
 	{
+
 		if(frequency[i]!=0)
 		{
-			printMatrix[counter][j]=(char)(i+'a');
+			printMatrix[counter+1][j]=i+'a';
 			tempCount=counter;
-			for(k=1; k<frequency[i]; i++)
+			for(k=0; k<frequency[i]; k++)
 			{
 				tempCount--;
 				printMatrix[tempCount][j]='*';
@@ -45,16 +55,15 @@ int main(){
 			j++;
 		}
 	}
-
-	for(i=1; i<=counter; i++)
+	for(i=0; i<=(counter+1); i++)
 	{
-		printMatrix[i][1]='|';
-		printMatrix[5][i]='-';
+		printMatrix[i][0]='|';
+		printMatrix[counter][i+1]='-';
 	}
-	printf("enter");
-	for(i=1; i<=counter; i++)
+	printf("\n");
+ for(i=0; i<(counter+2); i++)
 	{
-		for(j=1; j<=counter; j++)
+		for(j=0; j<(counter+2); j++)
 		{
 			printf("%c", printMatrix[i][j]);
 		}
