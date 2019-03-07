@@ -5,10 +5,7 @@ public class Park {
 	int capasity;
 	
 	ArrayList<Car> place; 
-	Park()
-	{
-		
-	}
+	
 	public Park(String nameOfPark, int capasity) {
 		this.nameOfPark = nameOfPark;
 		this.capasity = capasity;
