@@ -3,10 +3,7 @@ public class Car {
 	private String plate;
 	private String model;
 	private int modelYear;
-	Car()
-	{
-		
-	}
+	
 	Car(String plate, String model, int modelYear)
 	{
 		this.plate=plate;
