@@ -2,21 +2,21 @@ import java.util.ArrayList;
 
 public class Park {
 	String nameOfPark;
-	int capasity;
+	int capacity;
 	
 	ArrayList<Car> place; 
 	
-	public Park(String nameOfPark, int capasity) {
+	public Park(String nameOfPark, int capacity) {
 		this.nameOfPark = nameOfPark;
-		this.capasity = capasity;
+		this.capacity = capasity;
 		place = new ArrayList<Car>();
 	}
 	public int AddCar(Car car)
 	{	
-		if(capasity!=5)
+		if(capacity!=5)
 		{
 			place.add(car);
-			capasity--;
+			capacity--;
 		}
 		else
 		{
@@ -26,12 +26,12 @@ public class Park {
 	}
 	public void RemoveCar(Car car)
 	{
-		int capasity=this.capasity;	
+		int capacity=this.capacity;	
 		if(capasity!=0)
 		{
 			place.remove(car);
-			capasity++;
-			this.capasity = capasity;
+			capacity++;
+			this.capacity = capacity;
 		}
 		else
 		{
@@ -60,13 +60,13 @@ public class Park {
 	public String getNameOfPark() {
 		return nameOfPark;
 	}
-	public int getCapasity() {
-		return capasity;
+	public int getCapacity() {
+		return capacity;
 	}
 	public void setNameOfPark(String nameOfPark) {
 		this.nameOfPark = nameOfPark;
 	}
-	public void setCapasity(int capasity) {
-		this.capasity = capasity;
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
 	}
 }
