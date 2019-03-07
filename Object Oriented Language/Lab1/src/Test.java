@@ -11,7 +11,7 @@ public class Test {
 		System.out.println("Double number: " + (2*number));
 		
 		
-		String[] cities= {"Ýstanbul", "Ankara", "Ýzmir", "Kars"};
+		String[] cities= {"Istanbul", "Ankara", "Izmir", "Kars"};
 		
 		for(String city:cities)
 			System.out.println(city);*/
@@ -47,10 +47,4 @@ public class Test {
 		park1.identify();
 		System.out.println(temp);
 	}
-}//her class türünde bir nesne oluþtururken onun içindeki deðiþkenlerin ayarlanmasý gerekiyor.Onu yapan constructive method o yüzden
-//Araba car1 = new Araba(); --> Araba(); yazýyoruz
-//içinin null olmamasý için constructor methoda parametre ekliyorum.
-//Birden fazla ayný isimde constructive methoda tanýmý yapaiblirim.Parametre sayýsý farklý olmalý veya parametre tipi farklý olmalý (bu iþlemin adý overloading-fonksiyona aþýrý yükleme)Polymorphism
-
-
-//Sýnavlarda kullanmasan da get ve set methodlarýný yazman lazým.Yunus Hoca dikkat ediyor.
+}
