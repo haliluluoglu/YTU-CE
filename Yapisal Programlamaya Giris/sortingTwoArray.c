@@ -2,7 +2,7 @@
 
 int main()
 {
-	int *array1,*array2,*array3;
+	static int *array1,*array2,*array3;
 	int len1,len2,i,j,k,len3;
 	printf("Enter length of first array, please: ");
 	scanf("%d", &len1);
@@ -26,6 +26,9 @@ int main()
 		printf("Array2[%d] ", j);
 		scanf("%d", &array2[j]);
 	}
+	printf("%d %d\n", len1,len2);
+	array1[len1]=10000;
+	array2[len2]=10000;
 	i=0; j=0;
 	printf("Sorted array.\n");
 	for(k=0;k<len3; k++)
@@ -39,7 +42,6 @@ int main()
 		{
 			array3[k]=array1[i];
   			i++;
-
 		}
 	}
 	for(i=0; i<len3; i++)
@@ -48,4 +50,3 @@ int main()
 	}
 	return 0;
 }
-
