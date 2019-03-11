@@ -32,7 +32,7 @@ void main()
 			*(array+(i+1))=key;
 		}
 	}
-	printf("Array sorted.\n");
+	printf("---Array sorted---.\n");
 	printArray(array,number);
 }
 void printArray(int *array,int number)
