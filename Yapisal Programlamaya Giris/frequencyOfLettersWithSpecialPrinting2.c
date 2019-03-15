@@ -2,12 +2,11 @@
 #define MAX 100
 int main()
 {
- 	static int frequency[25]={0};
-	char histogram[MAX][MAX];
-	char string[MAX];
-	int	i=0,j,index;
-	double normalized,sum=0.0;
-	
+ 	static int frequency[26];
+	static char histogram[MAX][MAX];
+ 	char string[MAX];
+	int	i=0,j,index,normalized,sum;
+
 	printf("Enter a word, please: ");
 	gets(string);
 	while(string[i]!='\0')
@@ -21,35 +20,24 @@ int main()
 	}
 	for(i=0; i<26; i++)
 	{
-		if(frequency[i]!=0)
-		{
-			sum +=frequency[i];
-		}
+		printf("%c:%d\n",'a'+i,frequency[i]);
+		sum +=frequency[i];
 	}
-
 	for(j=0; j<26; j++)
 	{
-		if(frequency[j]!=0)
+		normalized=(frequency[j]/(float)sum)*100;
+		for(i=99; i>=(100-normalized); i--)
 		{
-			normalized=((double)frequency[j]/sum)*100;
-			printf("%f\n", normalized);
-			for(i=99; i>=(99-normalized); i--)
-			{
-				histogram[i][j]='*';
-			}
+			histogram[i][j]='*';
 		}
 	}
-	for(i=99; i>0; i--)
+ 	for (i=0;i<100;i++)
 	{
-		for(j=99; j>0; j--)
+		for (j=0;j<26;j++)
 		{
-			if(histogram[i][j]=='*')
-			{
-				printf("%c\t", histogram[i][j]);
-			}
-
+			printf("%c ",histogram[i][j]);
 		}
+		printf("\n");
 	}
 	return 0;
 }
-
