@@ -27,8 +27,8 @@ int main()
 		scanf("%d", &array2[j]);
 	}
 	printf("%d %d\n", len1,len2);
-	array1[len1]=10000;
-	array2[len2]=10000;
+	array1[len1]=10000;//array1[len1]=array2[len2+1];
+	array2[len2]=10000;//array2[len2]=array1[len1+1];
 	i=0; j=0;
 	printf("Sorted array.\n");
 	for(k=0;k<len3; k++)
