@@ -75,7 +75,7 @@ int push(node *stack,int data)
 	int temp=stack->top++;
     if (isFull(stack))
 	{
-		printf("\n(ERROR)Stack ýs full..\n");
+		printf("\n(ERROR)Stack Ä±s full..\n");
 		return -1;
     }
     else
@@ -121,7 +121,7 @@ int calculation(char *string,node *numberStack,node *charStack)
 	{
 		if(isdigit(*string))
 		{
-		    strcat(temp, charToString(*string));
+		    	strcat(temp, charToString(*string));
 		}
 		else if(*string != ' ')
 		{
@@ -299,6 +299,7 @@ void plus(node *numberStack, node *charStack)
 				printStacks(numberStack,charStack);
 		    }
 		    push(charStack,'+');
+		    printStacks(numberStack,charStack);
 		}
 		else
 		{
