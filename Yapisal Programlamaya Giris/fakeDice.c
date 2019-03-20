@@ -17,3 +17,5 @@ int main()
 	}
 	return 0;
 }
+//This algorithm calculates how many 1,2,3,4,5,6 numbers we have when we dice 10000 times.
+//If all numbers will be close to each other than the dice not faker than others.
