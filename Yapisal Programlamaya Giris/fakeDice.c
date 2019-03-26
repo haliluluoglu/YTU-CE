@@ -5,6 +5,8 @@ int main()
 	int i,dice1=60000,a=1366,c=150889,m=714025,dice2;
 	static int histogram[6];
 	
+	srand(time(NULL));
+	
 	for(i=0; i<10000; i++)
 	{
 		dice2=(a*dice1+c)%m;
