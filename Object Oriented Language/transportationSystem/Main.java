@@ -3,11 +3,12 @@ package transportationSystem;
 public class Main {
 		public static void main(String[] args)
 		{
-			Person[] people = new Person[3];
+			Person[] people = new Person[4];
 			
 			people[0] = new Student(123456789, 19, 100, "Halil Uluoglu");
 			people[1] = new Employee(123456780, 26, 200, "Steve Jobs");
 			people[2] = new Retired(1234567891, 75, 1000, "Albert Einstein");
+			people[3] = new Student(1234567892, 15, 150, "Aziz Sancar");
 			
 			for(Person person: people)
 			{
@@ -31,13 +32,11 @@ public class Main {
 				else
 					System.out.println("DEAD");
 			}	
-
 			System.out.println("Second get on");
 			for(Person person: people)
 			{
 				person.updateBalance();
 				person.introduceSelf();
 			}
-			
 		}
 }
