@@ -52,7 +52,34 @@ int *heapSort(int *array,int N)
 	}
 	return array;
 }
-
+void heapExtractMax(int *array,int N)
+{
+	if(N>=1)
+	{
+		int max=array[0];
+		array[0]=array[N-1];
+		maxHeapify(array,0,N-1);
+	}
+	else
+	{
+		printf("Heap is empty.\n");
+	}
+}
+void heapIncreaseKey(int *array,int i,int key)
+{
+	int temp;
+	if(key>=array[i])
+	{
+		array[i]=key;
+		while((i>0)&&(array[i/2]<array[i]))
+		{
+			temp=array[i];
+			array[i]=array[i/2];
+			array[i/2]=temp;
+			i/=2;
+		}
+	}
+}
 void main()
 {
 	int *array;
