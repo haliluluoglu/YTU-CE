@@ -16,6 +16,10 @@ public class BankManagement {
 	
 	public void addCustomer(Customer aCustomer)
 	{
+		if(aCustomer!=Null)
+		{
+			throw new CountException;
+		}
 		customers.add(aCustomer);
 	}
 	
