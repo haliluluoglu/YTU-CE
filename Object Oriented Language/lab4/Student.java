@@ -4,7 +4,7 @@ public class Student {
 	private String id;
 	private String name;
 	private String surname;
-	private int borrow;
+	private double borrow;
 	
 	public Student(String id, String name, String surname, int borrow) 
 	{
@@ -38,22 +38,21 @@ public class Student {
 		this.surname = surname;
 	}
 
-	public int getBorrow() {
+	public double getBorrow() {
 		return borrow;
 	}
 
-	public void setBorrow(int borrow) {
+	public void setBorrow(double borrow) {
 		this.borrow = borrow;
 	}
 
+	public boolean checkBorrow()
+	{
+		return borrow==0;
+	}
 
 	public String toString() {
 		String info = "Student [id=" + this.id + ", name=" + this.name + ", surname=" + this.surname + ", borrow=" + this.borrow + "]";
 		return info;
 	}
-
-	
-	
-	
-
 }
