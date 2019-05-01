@@ -1,11 +1,9 @@
 package lab4;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
-
-
 public class Dormitory {
+	
 	ArrayList<Student> students;
 	private int size;
 	
@@ -17,83 +15,87 @@ public class Dormitory {
 	public int getSize() {
 		return size;
 	}
-
+	
+	public void payBorrow(String id,double money){
+        Student aStudent = findStudent(id);
+        if(aStudent !=null)
+        {
+        	aStudent.setBorrow(aStudent.getBorrow()-money);
+        }
+    }
+	
+	public void addBorrow(double money){
+        for(Student aStudent : students)
+        {
+        	aStudent.setBorrow(aStudent.getBorrow()+money);
+        }
+    }
+	
 	public void printList()
 	{
-		for(Student aStudent : students)
+		System.out.println("Students List");
+		
+		if(students.isEmpty())
 		{
-			System.out.println(aStudent);
+			System.out.println("List of students are empty.");
+		}
+		else
+		{
+			for(Student aStudent : students)
+			{
+				System.out.println(aStudent);
+			}
+			System.out.println("-----------------");
 		}
 	}
 
-	public void addStudent(Student aStudent) throws OutOfCapacityExecption ,SameStudentException
+	public boolean addStudent(Student aStudent) throws OutOfCapacityExecption ,SameStudentException
 	{
 
 		if(students.size()>=this.size)
 		{
-			System.out.println("heehe2");
 			throw new OutOfCapacityExecption("[ERROR] Capacity is full!");
+		}
+		else if(findStudent(aStudent.getId())!=null)
+		{
+			throw new SameStudentException("[ERROR] Same student!");
 		}
 		else
 		{
-			if(students.size()>0 && findStudent(aStudent.getId())==null)
-			{
-				System.out.println("heehe1");
-				throw new SameStudentException("[ERROR] Same student!");
-			}
-			else
-			{System.out.println("heehe");
-				students.add(aStudent);
-				
-				this.size++;
-			}
+			students.add(aStudent);
+			System.out.println(aStudent + "added.");
+			this.size++;
 		}
-		
-		
-		
+		return true;
 	}
 	
 	public Student findStudent(String id)
 	{
 		for(Student aStudent : students)
 		{
-			if(aStudent.getId().equals(id))
+			if(aStudent.getId().compareTo(id)==0)
 			{
 				return aStudent;
 			}
 		}
 		return null;
 	}
-	
-	public void payBarrow(String id,int barrow)
+
+	public boolean removeStudent(String id) throws BorrowMoneyException
 	{
-		if(findStudent(id)!=null)
-		{
-			findStudent(id).setBorrow(findStudent(id).getBorrow()-barrow);
-		}
-	}
-	
-	public void addBarrow(int barrow)
-	{
-		for(Student aStudent : students)
-		{
-			aStudent.setBorrow(aStudent.getBorrow()+barrow);
-		}
-	}
-	public void removeStudent(String id) throws BarrowMoneyException
-	{
-			if(findStudent(id)!=null)
+			Student aStudent = findStudent(id);
+			if(aStudent != null)
 			{
-				if(findStudent(id).getBorrow()>0)
+				if(!aStudent.checkBorrow())
 				{
-					throw new BarrowMoneyException("[ERROR] Student owes money to dormitory!");
+					throw new BorrowMoneyException("This student has borrow to dormitory.So, student can not remove.");
 				}
 				else
 				{
-					
+					students.remove(aStudent);
 				}
+				return true;
 			}
-		this.size--;
+			return false;
 	}
-
 }
