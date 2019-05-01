@@ -1,32 +1,34 @@
-package lab3;
+/*package lab3;
 
 import java.util.HashMap;
 
 public class Class {
-	private int size;
+	private int size=0;
 	
 	private HashMap<Integer, Student> student;
 	
 	public Class()
 	{
 		student = new HashMap<>();
-		this.size=size;
+		
 	}
 	
 	public void addStudent(Student aStudent)
 	{
 		int i=0;
-		while(student.get(i)!=null)
+		while(student.get(i)!=null)//student.containkEY(İ)
 		{
 			i++;
 		}
 		student.put(i, aStudent);
-		this.size++;
+		this.size++;	
+		//System.out.println(size);
 	}
 	
 	public void removeStudent(int i)
 	{
 		student.remove(i);
+		
 		System.out.println(i + " extracted from the hashmap.");
 		int j=0; 
 		int count=0;
@@ -39,7 +41,7 @@ public class Class {
 			}
 		}
 		this.size=count;
-		
+		System.out.println(size);
 	}
 	
 	public void identifyYourself()
@@ -60,3 +62,4 @@ public class Class {
 	}
 
 }
+*/
