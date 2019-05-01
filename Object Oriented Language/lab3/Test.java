@@ -3,7 +3,7 @@ package lab3;
 public class Test {
 
     public static void main(String[] args) {
-        Class d = new Class();
+        ClassOtherSolution d = new ClassOtherSolution();
         Student pA = new Student("11011001");
         Student pB = new Student("11011002");
         Student pC = new Student("11011003");
@@ -28,5 +28,4 @@ public class Test {
         d.addStudent(pC);
         d.identifyYourself();        
     }
-    
 }
