@@ -1,15 +1,12 @@
-/*package lab3;
+package lab3;
+
+import java.util.HashMap;
 
 public class ClassOtherSolution {
-	package lab3;
-
-	import java.util.HashMap;
-
-	public class Class {
 		
 		private HashMap<Integer, Student> student;
 		
-		public Class()
+		public ClassOtherSolution()
 		{
 			student = new HashMap<>();
 		}
@@ -48,6 +45,4 @@ public class ClassOtherSolution {
 			}
 			System.out.println("--------------------------------");
 	}
-
-
-}*/
+}
