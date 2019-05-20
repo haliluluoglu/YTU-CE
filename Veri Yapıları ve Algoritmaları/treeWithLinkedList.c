@@ -124,6 +124,22 @@ T *deleteTree(T *root,int data)
 	}
 	return root;
 }
+
+int search(T *node, int wanted)
+{
+	if(node==NULL)
+	{
+		return -1;
+	}
+	if(node->data==wanted)
+	{
+		return 1;
+	}
+	search(node->right,wanted);
+
+	search(node->left,wanted);
+
+}
 void main()
 {
 	T *tree;
@@ -150,7 +166,9 @@ void main()
  	printf("\nIn-order Traversal.\n");
  	inTraverse(tree);
  	
- 	tree=deleteTree(tree,40);
+ 	tree=deleteTree(tree,28);
  	printf("\nDeleted from the tree\n");
  	inTraverse(tree);
+ 	
+ 	printf("%d",search(tree,10));
 }
